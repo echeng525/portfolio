@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Multiple Time Zones</title>
+    <link rel="stylesheet" href="clock.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🕐 Digital Clock</h1>
+            <p>Current Time in Different Time Zones</p>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-primary" onclick="toggleFormat()">Toggle Format (12/24)</button>
+            <button class="btn btn-secondary" onclick="addTimeZone()">+ Add Time Zone</button>
+        </div>
+
+        <div class="clocks-grid" id="clocksContainer">
+            <!-- Clock cards will be generated here -->
+        </div>
+
+        <div class="add-timezone-modal" id="addTimezoneModal">
+            <div class="modal-content">
+                <h2>Add Time Zone</h2>
+                <select id="timezoneSelect">
+                    <option value="">Select a time zone...</option>
+                </select>
+                <div class="modal-buttons">
+                    <button class="btn btn-primary" onclick="confirmAddTimeZone()">Add</button>
+                    <button class="btn btn-secondary" onclick="closeAddTimeZone()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="clock.js"></script>
+</body>
+</html>
