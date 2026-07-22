@@ -11,6 +11,7 @@
     --light-bg: #f9fafb;
     --white: #ffffff;
     --border-radius: 12px;
+    --accent-green: #10b981;
 }
 
 body {
@@ -117,7 +118,8 @@ body {
 
 .about h2,
 .skills h2,
-.projects h2 {
+.projects h2,
+.tools h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
     text-align: center;
@@ -187,10 +189,11 @@ body {
 
 .project-card {
     background: var(--white);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--accent-green);
 }
 
 .project-card:hover {
@@ -199,26 +202,149 @@ body {
 }
 
 .project-card h3 {
+    color: var(--accent-green);
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.project-subtitle {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.project-content {
+    color: #6b7280;
+    line-height: 1.8;
+}
+
+.project-content > p:first-of-type {
+    margin-bottom: 1.5rem;
+    color: #4b5563;
+    font-size: 1rem;
+}
+
+.project-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.project-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 1rem;
+    padding-bottom: 0;
+}
+
+.project-section h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.project-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #4b5563;
+}
+
+.project-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+    font-weight: bold;
+}
+
+.status-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.project-link {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.project-link:hover {
+    color: var(--secondary-color);
+}
+
+/* Tools Section */
+.tools {
+    padding: 80px 20px;
+    background: var(--white);
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #6b7280;
+    margin-bottom: 3rem;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.tool-card {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.tool-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+    transform: translateY(-5px);
+}
+
+.tool-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
-.project-card p {
+.tool-card p {
     color: #6b7280;
     margin-bottom: 1.5rem;
     line-height: 1.7;
 }
 
-.project-link {
+.tool-link {
+    display: inline-block;
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
 }
 
-.project-link:hover {
+.tool-link:hover {
     color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
 }
 
 /* Footer */
@@ -227,6 +353,10 @@ body {
     color: var(--white);
     text-align: center;
     padding: 2rem 20px;
+}
+
+.footer p {
+    margin: 0;
 }
 
 /* Animations */
@@ -245,6 +375,7 @@ body {
 @media (max-width: 768px) {
     .nav-links {
         gap: 1rem;
+        font-size: 0.9rem;
     }
 
     .hero-content h1 {
@@ -257,12 +388,23 @@ body {
 
     .about h2,
     .skills h2,
-    .projects h2 {
+    .projects h2,
+    .tools h2 {
         font-size: 2rem;
     }
 
     .skills-grid,
-    .projects-grid {
+    .projects-grid,
+    .tools-grid {
         grid-template-columns: 1fr;
+    }
+
+    .project-section {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
     }
 }
