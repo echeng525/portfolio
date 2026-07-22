@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-wrapper">
+            <div class="header">
+                <h1>📝 My To-Do List</h1>
+                <p>Stay organized and productive</p>
+            </div>
+
+            <div class="input-section">
+                <input 
+                    type="text" 
+                    id="todoInput" 
+                    class="todo-input" 
+                    placeholder="Add a new task..."
+                    onkeypress="handleKeyPress(event)"
+                >
+                <button class="add-btn" onclick="addTodo()">Add Task</button>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterTodos('all')">All</button>
+                <button class="filter-btn" onclick="filterTodos('active')">Active</button>
+                <button class="filter-btn" onclick="filterTodos('completed')">Completed</button>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Total:</span>
+                    <span class="stat-value" id="totalCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Completed:</span>
+                    <span class="stat-value" id="completedCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Pending:</span>
+                    <span class="stat-value" id="pendingCount">0</span>
+                </div>
+            </div>
+
+            <div class="todo-list" id="todoList">
+                <!-- To-do items will be generated here -->
+            </div>
+
+            <div class="empty-state" id="emptyState">
+                <p>🎉 No tasks yet! Add one to get started.</p>
+            </div>
+
+            <button class="clear-btn" onclick="clearCompleted()">Clear Completed</button>
+        </div>
+    </div>
+
+    <script src="todo.js"></script>
+</body>
+</html>
